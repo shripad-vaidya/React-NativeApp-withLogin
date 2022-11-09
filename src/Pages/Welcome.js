@@ -33,7 +33,7 @@ export default class Welcome extends Component {
     this.setState({ data: respjson.movies })
   }
   backBtn = () => {
-    this.props.navigation.navigate('LoginScreen');
+    this.props.navigation.goBack();
   }
   render() {
     var count = 0;
@@ -41,13 +41,13 @@ export default class Welcome extends Component {
       <View style={styles.container}>
         <Text style={styles.textData}>{this.state.Date1}</Text>
         <Text style={styles.welText}>Welcome {this.state.uName}</Text>
-        <SmallTeaser data={this.state.data} style={ {backgroundColor: this.state.color} } />
-        <TouchableOpacity >
-          <Text >
-          Back
+        <SmallTeaser data={this.state.data} color={this.state.color} />
+        <TouchableOpacity onPress={()=>this.backBtn()}>
+          <Text style={styles.textData} >
+            Back
           </Text>
         </TouchableOpacity>
-        {/* <Button title='Back' style={styles.backBtn} onPress={this.backButtonClick()}  /> */}
+        {/* <Button title='Back' style={styles.backBtn} o /> */}
       </View>
     )
   }

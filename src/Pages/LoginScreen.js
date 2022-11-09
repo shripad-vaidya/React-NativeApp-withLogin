@@ -15,19 +15,19 @@ export default class LoginScreen extends Component {
     {
       email:'ABC.com',
       pass:'12345@s',
-      color:'pink',
-      name:'abc',
+      color:'red',
+      name:'red',
     },
     {
       email:'shreyash.b@sankeysolutions.com',
-      pass:'Shrey@12 ',
-      color:'blue',
+      pass:'Shrey@12',
+      color:'pink',
       name:'Shreyash'
     },
     {
-      email:'ashwin.s@sankeysolutions.com',
-      pass:'ash@1005 ',
-      color:'pink',
+      email:'Ashwin.com',
+      pass:'ash@1005',
+      color:'blue',
       name:'Ashwin',
     }
   ];
@@ -39,12 +39,9 @@ export default class LoginScreen extends Component {
         if(index.pass== this.state.password){
 
             console.log(index.email,index.pass,index.color);
-            this.props.navigation.navigate('Welcome',{userName: index.name});
+            this.props.navigation.navigate('Welcome',{userName: index.name,color:index.color});
         }
-       
-
     }
-
     });
 
   };
